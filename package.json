@@ -1,0 +1,45 @@
+{
+    "name": "my-tsserver-ejs-extension",
+    "displayName": "TSServer for EJS",
+    "description": "Enables TSServer within EJS tags",
+    "version": "0.0.1",
+    "publisher": "arestinum",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ejs",
+                "extensions": [
+                    ".ejs"
+                ],
+                "aliases": [
+                    "EJS",
+                    "ejs"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage"
+    ],
+    "main": "./extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "typescript": "^4.0.0"
+    },
+    "dependencies": {
+        "typescript-language-server": "^4.1.2",
+        "vscode": "^1.1.37",
+        "vscode-languageclient": "^9.0.1"
+    }
+}
